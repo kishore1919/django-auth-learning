@@ -1,25 +1,27 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Landing from "./components/Landing";
 
 function App() {
   return (
-    <div className="App">
-      <div className="login-box">
-        <h2>Login</h2>
-        <form>
-          <div className="user-box">
-              <input type="text" name="" required/>
-              <label>Username</label>
-          </div>
-          <div className="user-box">
-            <input type="password" name="" required/>
-            <label>Password</label>
-          </div>
-          <a href="#">
-            Submit
-          </a>
-        </form>
-      </div>
-
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/signup">
+          <Signup></Signup>
+        </Route>
+        <Route path="/login">
+          <Login/>
+        </Route>
+        <Route path="/">
+          <Landing/>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
